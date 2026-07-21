@@ -1,3 +1,6 @@
+/// <reference types="cypress"/>
+import { faker } from '@faker-js/faker';
+
 describe('Testes End To End do fluxo de cadastro e login', () => {
 
     /* 
@@ -18,11 +21,20 @@ describe('Testes End To End do fluxo de cadastro e login', () => {
     */
 
     beforeEach(() => {
-        // Configurações iniciais, se necessário
+        cy.visit('register.html')
     });
-
 
     it('Deve fazer o cadastro e validar o login com o usuário cadastrado', () => {
         // Criar todo o fluxo aqui dentro deste único "it"
+        let nome = faker.person.fullName()
+        let email = faker.internet.email()
+        let telefone = faker.phone.number()
+        let senha = faker.internet.password()
+        let confirmarsenha = senha
+        cy.preencherCadastro(nome, email, telefone, senha, confirmarsenha)
+        cy.get('#user-name').should('contain', nome)
+        cy.get('.user-actions > .btn-outline-danger').click()
+        cy.login(email, senha)
+        cy.get('#user-name').should('contain', nome)
     });
 });
