@@ -1,54 +1,57 @@
-#Projeto de Testes -  Hub de Leitura
+# Hub de Leitura — Tarefa de Automação de UI com Cypress
 
-## Sobre
-Projeto de testes para a aplicação "Hub de Leitura". Este repositório contém a interface e/ou testes automatizados para validação da aplicação.
+Projeto de atividade prática para desenvolver testes end-to-end da interface do Hub de Leitura usando Cypress.
+
+## Objetivos
+- Automatizar fluxos da interface web.
+- Verificar comportamentos esperados por meio de asserts.
+- Praticar organização e execução de testes de UI.
+
+## Tecnologias
+- JavaScript
+- Node.js e npm
+- Cypress
 
 ## Pré-requisitos
-- Git
-- Node.js (recomendado >= 14)
+- Node.js e npm instalados.
+- Aplicação Hub de Leitura executando na URL esperada pela configuração dos testes.
 
-## Como clonar
-1. Abra o terminal.
-2. Clone o repositório:
-    - git clone <URL-DO-REPOSITORIO>
-3. Acesse a pasta do projeto:
-    - cd <NOME-DO-REPOSITORIO>
+## Instalação e execução
+```bash
+npm install
+npx cypress open
+```
+Para executar em modo headless:
+```bash
+npx cypress run
+```
+Confira `package.json`, `cypress.config.js` e os arquivos em `cypress/` para confirmar os comandos, a URL base e os cenários disponíveis.
 
-## Instalar dependências
-- Usando npm:
-  - npm install
+## Estrutura do projeto
+```text
+Atividade-hub-de-leitura-teste-ui-task/
+├── cypress/
+├── cypress.config.js
+├── package.json
+├── package-lock.json
+└── README.md
+```
 
+## Desafios práticos
+Entender o fluxo funcional, identificar elementos de forma estável, executar ações de usuário e validar os resultados apresentados pela interface.
 
-## Executar em desenvolvimento
-- npm run dev
-ou
-- npm start
-(A opção exata depende dos scripts definidos em package.json; verifique-os se necessário.)
+## Boas práticas adotadas
+- Organização dos testes dentro da estrutura do Cypress.
+- Configuração centralizada no arquivo `cypress.config.js`.
+- Execução repetível por comandos de terminal.
 
-Abra o navegador em http://localhost:3000 (ou a porta indicada no terminal).
+## 📚 Aprendizados
+A atividade permite praticar automação de UI com Cypress, incluindo seleção de elementos, interação com a interface e validação de resultados. Também reforça a importância de manter os testes alinhados ao comportamento esperado da aplicação.
 
-## Rodar testes
-- Testes unitários:
-  - npm test
-- Testes end-to-end (se houver, ex.: Cypress):
-  - npx cypress open
-  - npx cypress run
+## Considerações finais
+Confirme que a aplicação alvo está disponível antes de iniciar a suíte. Consulte os arquivos de teste para identificar os cenários efetivamente cobertos e os ajustes necessários ao ambiente local.
 
-Verifique os scripts em package.json para nomes específicos (por exemplo, test:unit, test:e2e).
+---
 
-## Build para produção
-- npm run build
-
-Os artefatos serão gerados na pasta indicada pelo projeto (ex.: dist, build).
-
-## Variáveis de ambiente
-Se houver um arquivo exemplo (.env.example), copie para .env e ajuste conforme necessário:
-- cp .env.example .env
-
-## Contribuição
-- Abra issues para bugs ou melhorias.
-- Envie pull requests com descrições claras das mudanças.
-
-## Ajuda / Problemas comuns
-- Atualize dependências: rm -rf node_modules && npm install
-- Verifique a versão do Node.js se algum pacote não compilar.
+## 🎓 Formação
+Atividade desenvolvida durante a formação profissionalizante em **Quality Assurance (QA) pela EBAC — Escola Britânica de Artes Criativas e Tecnologia**.
